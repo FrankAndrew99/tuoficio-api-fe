@@ -7,6 +7,8 @@ import ScrollToTop from "./components/ScrollToTop";
 import Categories from "./components/Categories";
 import Testimonials from "./components/Testimonials";
 import scrollreveal from "scrollreveal";
+import {LoginForm} from "./components/LoginForm/LoginForm"; 
+import {SignUpForm} from "./components/SignUpForm/SignUpForm"
 export default function App() {
   useEffect(() => {
     const sr = scrollreveal({
@@ -32,6 +34,8 @@ export default function App() {
   }, []);
   return (
     <div>
+      <SignUpForm/>
+      <LoginForm />
       <ScrollToTop />
       <Navbar />
       <Hero />
