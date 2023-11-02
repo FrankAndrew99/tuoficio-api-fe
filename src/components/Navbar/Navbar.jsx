@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import logo from "../assets/tuoficio_logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
-export default function Navbar() {
+import { Link } from "react-router-dom";
+
+export const Navbar = () => {
   const [navbarState, setNavbarState] = useState(false);
   return (
     <>
       <Nav>
         <div className="brand">
           <div className="container">
-            <img src={logo} alt="" style={{ width: '500px', height: 'auto' }} />
+            <img src={"../img/tuoficio_logo.png"} alt="" style={{ width: '500px', height: 'auto' }} />
             
           </div>
           <div className="toggle">
@@ -36,7 +37,7 @@ export default function Navbar() {
             <a href="#testimonials">Acceder</a>
           </li>
         </ul>
-        <button>Profesional</button>
+        <Link to="/login" ><button>Iniciar Sesion</button></Link>
       </Nav>
       <ResponsiveNav state={navbarState}>
         <ul>

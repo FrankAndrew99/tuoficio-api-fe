@@ -1,53 +1,46 @@
 import React from "react";
 import styled from "styled-components";
-import category1 from "../assets/category1.png";
-import category2 from "../assets/category2.png";
-import category3 from "../assets/category3.png";
-import category4 from "../assets/category4.png";
-import category5 from "../assets/category5.png";
-import category6 from "../assets/category6.png";
-import category7 from "../assets/category7.png";
 
-export default function Categories() {
+export const Categories = () => {
   const data = [
     {
-      icon: category1,
+      icon: "../img/category1.png",
       title: "Hogar",
       subTitle:
         " Encuentre el contratista que necesita y comience hoy el proyecto de renovación de sus sueños..",
     },
     {
-      icon: category2,
+      icon: "../img/category2.png",
       title: "Salud",
       subTitle:
         "Todo lo referente a tu salud lo econtras en un solo lugar",
     },
     {
-      icon: category3,
+      icon: "../img/category3.png",
       title: "Comercio",
       subTitle:
         " Todas las compras en un solo lugar",
     },
     {
-      icon: category4,
+      icon: "../img/category4.png",
       title: "Automotor",
       subTitle:
         " Todo para tu auto",
     },
     {
-      icon: category5,
+      icon: "../img/category5.png",
       title: "Alquileres",
       subTitle:
         " Todos los alquileres aqui",
     },
     {
-      icon: category6,
+      icon: "../img/category6.png",
       title: "Alquileres",
       subTitle:
         " Todos los alquileres aqui",
     },
     {
-      icon: category7,
+      icon: "../img/category7.png",
       title: "Alquileres",
       subTitle:
         " Todos los alquileres aqui",

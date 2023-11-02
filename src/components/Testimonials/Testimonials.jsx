@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import avatarImage from "../assets/avatarImage.jpg";
-export default function Testimonials() {
+export const Testimonials = () => {
   return (
     <Section id="testimonials">
       <div className="title">
@@ -14,7 +13,7 @@ export default function Testimonials() {
             asperiores eaque.
           </p>
           <div className="info">
-            <img src={avatarImage} alt="" />
+            <img src={"../img/avatarImage.jpg"} alt="" />
             <div className="details">
               <h4>usuario 1</h4>
               <span>CEO - tu oficio DEV</span>
@@ -27,7 +26,7 @@ export default function Testimonials() {
             asperiores eaque.
           </p>
           <div className="info">
-            <img src={avatarImage} alt="" />
+            <img src={"../img/avatarImage.jpg"} alt="" />
             <div className="details">
               <h4>usuario 2</h4>
               <span>CEO - tu oficio DEV</span>
@@ -40,7 +39,7 @@ export default function Testimonials() {
             asperiores eaque.
           </p>
           <div className="info">
-            <img src={avatarImage} alt="" />
+            <img src={"../img/avatarImage.jpg"} alt="" />
             <div className="details">
               <h4>usuario 3</h4>
               <span>CEO - tu oficio DEV</span>

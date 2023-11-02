@@ -69,7 +69,7 @@ export const SignUpForm = () => {
                 />
             </div>
             <button type="submit">Registrarse</button>
-            <Link to="/" ><button type="submit">Volver</button></Link>
+            <Link to="/login" ><button type="submit">Volver</button></Link>
             </form>
         )}
         </div>

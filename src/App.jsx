@@ -1,48 +1,19 @@
 import React, { useEffect } from "react";
-import Footer from "./components/Footer";
-import Hero from "./components/Hero";
-import Navbar from "./components/Navbar";
-import Recommend from "./components/Recommend";
-import ScrollToTop from "./components/ScrollToTop";
-import Categories from "./components/Categories";
-import Testimonials from "./components/Testimonials";
-import scrollreveal from "scrollreveal";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./components/Home/Home";
 import {LoginForm} from "./components/LoginForm/LoginForm"; 
 import {SignUpForm} from "./components/SignUpForm/SignUpForm"
 export default function App() {
-  useEffect(() => {
-    const sr = scrollreveal({
-      origin: "top",
-      distance: "80px",
-      duration: 2000,
-      reset: true,
-    });
-    sr.reveal(
-      `
-        nav,
-        #hero,
-        #categories,
-        #recommend,
-        #testimonials,
-        #footer
-        `,
-      {
-        opacity: 0,
-        interval: 300,
-      }
-    );
-  }, []);
+
   return (
     <div>
-      <SignUpForm/>
-      <LoginForm />
-      <ScrollToTop />
-      <Navbar />
-      <Hero />
-      <Categories />
-      <Recommend />
-      <Testimonials />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<LoginForm/>}/>
+          <Route path="/signup" element={<SignUpForm/>}/>
+          <Route path="/" element={<Home/>}/>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

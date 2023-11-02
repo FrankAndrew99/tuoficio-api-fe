@@ -61,6 +61,7 @@ export const LoginForm = () => {
         </div>
         <button type="submit">Iniciar Sesión</button>
         <Link to="/signup"><button type="submit">Registrarse</button></Link>
+        <Link to="/"><button type="submit">Volver</button></Link>
       </form>
     </div>
   );

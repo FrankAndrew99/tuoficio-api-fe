@@ -1,49 +1,44 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import oficio1 from "../assets/oficio1.png";
-import info1 from "../assets/info1.png";
-import info2 from "../assets/info2.png";
-import info3 from "../assets/info3.png";
-
-export default function Recommend() {
+export const Recommend = () => {
   const data = [
     {
-      image: oficio1,
+      image: "../img/oficio1.png",
       title: "oficio 1",
       subTitle: "aqui va la descripcion",
       cost: "$precio",
       duration: "Calificacion",
     },
     {
-      image: oficio1,
+      image: "../img/oficio1.png",
       title: "oficio 2",
       subTitle: "aqui va la descripcion",
       cost: "54,200",
       duration: "Calificacion",
     },
     {
-      image: oficio1,
+      image: "../img/oficio1.png",
       title: "oficio 3",
       subTitle: "aqui va la descripcion",
       cost: "45,500",
       duration: "Calificacion",
     },
     {
-      image: oficio1,
+      image: "../img/oficio1.png",
       title: "oficio 4",
       subTitle: "aqui va la descripcion",
       cost: "24,100",
       duration: "Calificacion",
     },
     {
-      image: oficio1,
+      image: "../img/oficio1.png",
       title: "oficio 5",
       subTitle: "aqui va la descripcion",
       cost: "95,400",
       duration: "Calificacion",
     },
     {
-      image: oficio1,
+      image: "../img/oficio1.png",
       title: "oficio 6",
       subTitle: "aqui va la descripcion",
       cost: "38,800",
@@ -87,9 +82,9 @@ export default function Recommend() {
               <p>{destination.subTitle}</p>
               <div className="info">
                 <div className="services">
-                  <img src={info1} alt="" />
-                  <img src={info2} alt="" />
-                  <img src={info3} alt="" />
+                  <img src={"../img/info1.png"} alt="" />
+                  <img src={"../img/info2.png"} alt="" />
+                  <img src={"../img/info3.png"} alt="" />
                 </div>
                 <h4>{destination.cost}</h4>
               </div>

@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import homeImage from "../assets/1.jpg";
-export default function Hero() {
+export const Hero = () => {
   return (
     <Section id="hero">
       <div className="background">
-        <img src={homeImage} alt="" />
+        <img src={"../img/1.jpg"} alt="" />
       </div>
       <div className="content">
         <div className="title">
