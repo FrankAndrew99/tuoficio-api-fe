@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { ScrollToTop } from '../ScrollToTop/ScrollToTop';
+import { Navbar } from '../Navbar/Navbar';
+import { Footer } from '../Footer/Footer';
 export const SearchResults = () => {
     const data = [
         {
@@ -9,13 +12,7 @@ export const SearchResults = () => {
             cost: "$10000",
             duration: "Calificacion",
         },
-        {
-            image: "../img/plomero.jpeg",
-            title: "Plomero",
-            subTitle: "Soy un plomero con experiencia en instalación y reparación de fontanería, listo para solucionar tus problemas de agua y tuberías de manera eficiente.",
-            cost: "$54200",
-            duration: "Calificacion",
-        },
+       
         {
             image: "../img/gasista.jpeg",
             title: "Gasista",
@@ -25,20 +22,24 @@ export const SearchResults = () => {
         },
     ];
 
-    const packages = [
-        "Lo mas popular",
-        "Los mas recomentados",
-        "Según ubicación ",
-        "Por precios",
-    ];
+    // const packages = [
+    //     "Lo mas popular",
+    //     "Los mas recomentados",
+    //     "Según ubicación ",
+    //     "Por precios",
+    // ];
 
     const [active, setActive] = useState(1);
     return (
+      <div>
+        <ScrollToTop/>
+        <Navbar/>
         <Section id="recommend">
             <div className="title">
-                <h2>Lo más recomendado</h2>
+                <h2>Resultados</h2>
             </div>
-            <div className="packages">
+            <br />
+            {/* <div className="packages">
                 <ul>
                     {packages.map((pkg, index) => {
                         return (
@@ -51,31 +52,40 @@ export const SearchResults = () => {
                         );
                     })}
                 </ul>
-            </div>
+            </div> */}
             <div className="destinations">
                 {data.map((destination) => {
                     return (
-                        <div className="destination">
-                            <img src={destination.image} alt="" />
-                            <h3>{destination.title}</h3>
-                            <p>{destination.subTitle}</p>
-                            <div className="info">
-                                <div className="services">
-                                    <img src={"../img/info1.png"} alt="" />
-                                    <img src={"../img/info2.png"} alt="" />
-                                    <img src={"../img/info3.png"} alt="" />
-                                </div>
-                                <h4>{destination.cost}</h4>
-                            </div>
-                            <div className="distance">
-                                <span>100 Puntos</span>
-                                <span>{destination.duration}</span>
-                            </div>
+                      <div className="padre">
+                        <div className="hijo">
+                          <div className="destination">
+                              <img src={destination.image} alt="" />
+                              <h3>{destination.title}</h3>
+                              <p>{destination.subTitle}</p>
+                              <div className="info">
+                                  {/* <div className="services">
+                                      <img src={"../img/info1.png"} alt="" />
+                                      <img src={"../img/info2.png"} alt="" />
+                                      <img src={"../img/info3.png"} alt="" />
+                                  </div> */}
+                                  <h4>{destination.cost}</h4>
+                              </div>
+                              {/* <div className="distance">
+                                  <span>100 Puntos</span>
+                                  <span>{destination.duration}</span>
+                              </div> */}
+                          </div>
                         </div>
+                      </div>
                     );
                 })}
             </div>
+            <div className="mapa">
+              
+            </div>
         </Section>
+        <Footer/>
+        </div>
     );
 }
 
@@ -101,10 +111,15 @@ const Section = styled.section`
       }
     }
   }
+  .hijo {
+    display: flex
+    flex-direction: column;
+    justify-content:center;
+  }
   .destinations {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
     padding: 0 3rem;
     .destination {
       padding: 1rem;

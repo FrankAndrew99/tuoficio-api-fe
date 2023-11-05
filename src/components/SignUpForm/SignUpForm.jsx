@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-
+import './SignUpForm.css';
 export const SignUpForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -35,7 +35,7 @@ export const SignUpForm = () => {
         };
   
     return (
-        <div>
+        <div className='container1 box'>
             {isRegistered ? (
             <Link to="/App" />
         ) : (
@@ -50,7 +50,7 @@ export const SignUpForm = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
-            <div>
+            <div >
                 <label htmlFor="password">Contraseña</label>
                 <input
                 type="password"
