@@ -5,7 +5,7 @@ import { AiFillInstagram } from "react-icons/ai";
 export const Footer = () => {
   return (
     <FooterContainer>
-      <span>Copyright &copy; Tu Oficio </span>
+      <span>Copyright &copy; Tu Oficio 2023 </span>
       <ul className="links">
         <li>
           <a href="#hero">Home</a>
@@ -17,20 +17,26 @@ export const Footer = () => {
           <a href="#recommend">Explorar</a>
         </li>
         <li>
-          <a href="#testimonials">acceder</a>
+          <a href="#testimonials">Acceder</a>
         </li>
       </ul>
       <ul className="social__links">
-        <li>
-          <BsFacebook />
-        </li>
-        <li>
-          <AiFillInstagram />
-        </li>
-        <li>
-          <BsLinkedin />
-        </li>
-      </ul>
+  <li>
+    <a href="https://wwww.facebook.com">
+      <BsFacebook />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.instagram.com">
+      <AiFillInstagram />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com">
+      <BsLinkedin />
+    </a>
+  </li>
+</ul>
     </FooterContainer>
   );
 }
