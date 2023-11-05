@@ -4,45 +4,42 @@ export const Testimonials = () => {
   return (
     <Section id="testimonials">
       <div className="title">
-        <h2>Recomendaciones</h2>
+        <h2>Reseñas</h2>
       </div>
       <div className="testimonials">
         <div className="testimonial">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            asperiores eaque.
+            Excelente atencion y responsabilidad del profesional contactado.
           </p>
           <div className="info">
-            <img src={"../img/avatarImage.jpg"} alt="" />
+            <img src={"../img/arquitecta.jpeg"} alt="" />
             <div className="details">
-              <h4>usuario 1</h4>
-              <span>CEO - tu oficio DEV</span>
+              <h4>Flavia Batistuta</h4>
+              <span>Administrativa</span>
             </div>
           </div>
         </div>
         <div className="testimonial">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            asperiores eaque.
+            Se realizó el trabajo pedido en tiempo y forma. Muy recomendable.
           </p>
           <div className="info">
-            <img src={"../img/avatarImage.jpg"} alt="" />
+            <img src={"../img/ferretero.jpeg"} alt="" />
             <div className="details">
-              <h4>usuario 2</h4>
-              <span>CEO - tu oficio DEV</span>
+              <h4>Armando Estebanquito</h4>
+              <span>Carpintero</span>
             </div>
           </div>
         </div>
         <div className="testimonial">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            asperiores eaque.
+            Servicio de primer nivel, lo recomendare a mis conocidos y familiares.
           </p>
           <div className="info">
-            <img src={"../img/avatarImage.jpg"} alt="" />
+            <img src={"../img/ingeniero_civil.jpeg"} alt="" />
             <div className="details">
-              <h4>usuario 3</h4>
-              <span>CEO - tu oficio DEV</span>
+              <h4>Eddie Ficio</h4>
+              <span>Ingeniero Civil</span>
             </div>
           </div>
         </div>
