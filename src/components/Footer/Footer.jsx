@@ -17,7 +17,7 @@ export const Footer = () => {
           <a href="#recommend">Explorar</a>
         </li>
         <li>
-          <a href="#testimonials">Acceder</a>
+          <a href="#testimonials">Reseñas</a>
         </li>
       </ul>
       <ul className="social__links">
