@@ -15,21 +15,28 @@ export const LoginForm = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:3000/', {
+      const response = await fetch('http://localhost:3000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(loginData),
       });
-
-      if (response.status === 200) {
-        setLoggedIn(true)
+      const data = await response.json();
+      console.log(data)
+      if (response.ok) {
+        window.alert(data.message);
       } else {
-        console.log("Error al inicar sesion")
+        window.alert(data.message);
       }
+
+      // if (response.status === 200) {
+      setLoggedIn(true)
+      // } else {
+      //   console.log("Error al inicar sesion")
+      // }
     } catch (error) {
-      //
+      console.error('Error al iniciar sesión:', error);
     }
   };
 
