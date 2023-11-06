@@ -9,82 +9,53 @@ export const SearchResults = () => {
             image: "../img/cerrajero.jpeg",
             title: "Cerrajero",
             subTitle: "Soy un cerrajero experimentado que se especializa en solucionar problemas de cerrajería. Brindo servicios confiables de apertura, reparación y reemplazo de cerraduras para garantizar la seguridad de mis clientes",
-            cost: "$10000",
             duration: "Calificacion",
         },
-       
         {
             image: "../img/gasista.jpeg",
             title: "Gasista",
             subTitle: "Soy un gasista con experiencia en instalación y mantenimiento de sistemas de gas para tu tranquilidad y seguridad.",
-            cost: "$45500",
             duration: "Calificacion",
+        },
+        ,
+        {
+            image: "../img/mapa.jpg",
         },
     ];
 
-    // const packages = [
-    //     "Lo mas popular",
-    //     "Los mas recomentados",
-    //     "Según ubicación ",
-    //     "Por precios",
-    // ];
-
     const [active, setActive] = useState(1);
     return (
-      <div>
-        <ScrollToTop/>
-        <Navbar/>
-        <Section id="recommend">
-            <div className="title">
-                <h2>Resultados</h2>
-            </div>
-            <br />
-            {/* <div className="packages">
-                <ul>
-                    {packages.map((pkg, index) => {
+        <div>
+            <ScrollToTop />
+            <Navbar />
+            <Section id="recommend">
+                <div className="title">
+                    <h2>Profesionales cerca de tu busqueda.</h2>
+                </div>
+                <br />
+                <br />
+                { }
+                <div className="destinations">
+                    {data.map((destination) => {
                         return (
-                            <li
-                                className={active === index + 1 ? "active" : ""}
-                                onClick={() => setActive(index + 1)}
-                            >
-                                {pkg}
-                            </li>
+                            <div className="padre">
+
+                                <div className="destination">
+                                    <img src={destination.image} alt="" />
+                                    <h3>{destination.title}</h3>
+                                    <p>{destination.subTitle}</p>
+                                    <div className="info">
+                                        { }
+                                        <h4>{destination.cost}</h4>
+                                    </div>
+                                    { }
+                                </div>
+                            </div>
                         );
                     })}
-                </ul>
-            </div> */}
-            <div className="destinations">
-                {data.map((destination) => {
-                    return (
-                      <div className="padre">
-                        <div className="hijo">
-                          <div className="destination">
-                              <img src={destination.image} alt="" />
-                              <h3>{destination.title}</h3>
-                              <p>{destination.subTitle}</p>
-                              <div className="info">
-                                  {/* <div className="services">
-                                      <img src={"../img/info1.png"} alt="" />
-                                      <img src={"../img/info2.png"} alt="" />
-                                      <img src={"../img/info3.png"} alt="" />
-                                  </div> */}
-                                  <h4>{destination.cost}</h4>
-                              </div>
-                              {/* <div className="distance">
-                                  <span>100 Puntos</span>
-                                  <span>{destination.duration}</span>
-                              </div> */}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                })}
-            </div>
-            <div className="mapa">
-              
-            </div>
-        </Section>
-        <Footer/>
+                </div>
+            </Section>
+            <Footer />
         </div>
     );
 }
