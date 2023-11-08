@@ -41,6 +41,8 @@ export const Footer = () => {
   );
 }
 
+export default Footer;
+
 const FooterContainer = styled.footer`
   display: flex;
   justify-content: space-evenly;
