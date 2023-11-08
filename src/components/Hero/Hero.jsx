@@ -28,7 +28,9 @@ export const Hero = () => {
             <label htmlFor="   "></label>
             <input type="text" placeholder="Ubicacion" />
           </div>
+          <a href="/searchResults">
           <button>Buscar</button>
+          </a>
         </div>
       </div>
     </Section>
