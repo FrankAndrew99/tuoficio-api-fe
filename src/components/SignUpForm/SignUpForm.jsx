@@ -6,12 +6,18 @@ export const SignUpForm = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
+    const [address, setAddress] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [birthdate, setBirthdate] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [dni, setDNI] = useState('');
+    const [userType, setUserType] = useState('cliente');
     const [isRegistered, setIsRegistered] = useState(false);
+
+    // Campos adicionales para profesionales
+    const [registrationNumber, setRegistrationNumber] = useState('');
+    const [specialty, setSpecialty] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -20,31 +26,46 @@ export const SignUpForm = () => {
             firstName: firstName,
             lastName: lastName,
             email: email,
+            address: address,
             password: password,
-            birthdate: birthdate,
+            birthDate: new Date(birthdate),
             phoneNumber: phoneNumber,
             dni: dni,
+            userType: userType,
+            registrationNumber: registrationNumber,
+            specialty: specialty,
         };
-        console.log(userData)
-        try {
-            console.log(userData)
-            const response = await fetch('http://localhost:3000/add-client', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(userData),
 
-            });
-            const body = JSON.stringify(userData)
-            console.log(body)
-            if (response.status === 201) {
-                setIsRegistered(true);
-            } else {
-                console.log("Error al registrar el usuario");
+        try {
+            let response;
+            if (userType === 'cliente') {
+                response = await fetch('http://localhost:3000/add-client', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(userData),
+                });
+            } else if (userType === 'profesional') {
+                response = await fetch('http://localhost:3000/add-professional', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(userData),
+                });
             }
+            console.log(userData)
+            const data = await response.json();
+            console.log(data)
+            if (response.ok) {
+                window.alert(data.message);
+            } else {
+                window.alert(data.message);
+            }
+            setIsRegistered(true);
         } catch (error) {
-            // Manejar errores aquí
+            console.error('Error al registrarse:', error);
         }
     };
 
@@ -74,6 +95,15 @@ export const SignUpForm = () => {
                         />
                     </div>
                     <div>
+                        <label htmlFor="address">Dirección</label>
+                        <input
+                            type="text"
+                            id="address"
+                            value={address}
+                            onChange={(e) => setAddress(e.target.value)}
+                        />
+                    </div>
+                    <div>
                         <label htmlFor="birthdate">Fecha de Nacimiento</label>
                         <input
                             type="date"
@@ -100,6 +130,46 @@ export const SignUpForm = () => {
                             onChange={(e) => setDNI(e.target.value)}
                         />
                     </div>
+                    <div>
+                        <label htmlFor="userType">Tipo de Usuario:</label>
+                        <select
+                            id="userType"
+                            value={userType}
+                            onChange={(e) => setUserType(e.target.value)}
+                        >
+                            <option value="cliente">Cliente</option>
+                            <option value="profesional">Profesional</option>
+                        </select>
+                    </div>
+                    {/* Campos adicionales para profesionales */}
+                    {userType === 'profesional' && (
+                        <div>
+                            <div>
+                                <label htmlFor="registrationNumber">Número de Matrícula</label>
+                                <input
+                                    type="text"
+                                    id="registrationNumber"
+                                    value={registrationNumber}
+                                    onChange={(e) => setRegistrationNumber(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="specialty">Especialidad</label>
+                                <select
+                                    id="specialty"
+                                    value={specialty}
+                                    onChange={(e) => setSpecialty(e.target.value)}
+                                >
+                                    <option value="">Seleccionar Especialidad</option>
+                                    <option value="Plomero">Plomero</option>
+                                    <option value="Electricista">Electricista</option>
+                                    <option value="Carpintero">Carpintero</option>
+                                    <option value="Albañil">Albañil</option>
+                                    <option value="Jardinero">Jardinero</option>
+                                </select>
+                            </div>
+                        </div>
+                    )}
                     <div>
                         <label htmlFor="email">Correo Electrónico</label>
                         <input
