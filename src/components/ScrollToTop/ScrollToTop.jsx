@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+
+export const toTop = () => {
+  window.scrollTo({ top: 0 });
+};
+
 export const ScrollToTop = () => {
   const [scrollState, setScrollState] = useState(false);
-  const toTop = () => {
-    window.scrollTo({ top: 0 });
-  };
+
   window.addEventListener("scroll", () => {
     window.pageYOffset > 200 ? setScrollState(true) : setScrollState(false);
   });
+
   return (
     <ToTop onClick={toTop} scrollState={scrollState}>
       <img src={"../img/logo.png"} alt="" />
@@ -29,3 +33,5 @@ const ToTop = styled.div`
   background-color: #1900ff39;
   padding: 1rem;
 `;
+
+export default ScrollToTop;
