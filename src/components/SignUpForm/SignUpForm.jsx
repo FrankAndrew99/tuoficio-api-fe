@@ -19,6 +19,7 @@ export const SignUpForm = () => {
     const [registrationNumber, setRegistrationNumber] = useState('');
     const [specialty, setSpecialty] = useState('');
 
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -55,15 +56,15 @@ export const SignUpForm = () => {
                     body: JSON.stringify(userData),
                 });
             }
-            console.log(userData)
             const data = await response.json();
-            console.log(data)
             if (response.ok) {
+                setIsRegistered(true);
                 window.alert(data.message);
+                window.location.href = "/";
+
             } else {
                 window.alert(data.message);
             }
-            setIsRegistered(true);
         } catch (error) {
             console.error('Error al registrarse:', error);
         }
