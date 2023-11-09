@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
-
+import './LoginForm.css'; // Importa el archivo CSS
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -55,7 +55,7 @@ export const LoginForm = () => {
   }
 
   return (
-    <div>
+    <div className='box'>
       <h2>Iniciar sesión</h2>
       <form onSubmit={handleSubmit}>
         <div>

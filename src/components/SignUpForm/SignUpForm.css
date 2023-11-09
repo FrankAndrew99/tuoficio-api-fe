@@ -1,89 +1,114 @@
 /* SignUpForm.css */
-.container1 {
-    background-color: #fff;
-    border: 3px solid #000;
-    padding: 20px;
-    border-radius: 10px;
-    width: 60vmin;
-    height: auto;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  h2 {
-    color: #333;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input {
+.container2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #808080; /* Color neutro */
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border: none;
+  padding: 20px;
+  border-radius: 10px;
+  width: 60vmin;
+  height: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  width: 45%; /* Ajusta el ancho de las columnas según tus preferencias */
+}
+
+form > div {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* Ajustes adicionales si es necesario */
+@media (max-width: 768px) {
+  form {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
   }
-  
-  button[type="submit"] {
-    background-color: #08f;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
-    background-color: #06d;
-  }
-  
-  Link {
-    text-decoration: none;
-    color: #08f;
-    margin-top: 10px;
-  }
-  
-  Link:hover {
-    text-decoration: underline;
-  }
-  .box {
-    --border-size: 3px;
-    --border-angle: 0turn;
-    width: 60vmin;
-    height: 50vmin;
-    background-image: conic-gradient(
-        from var(--border-angle),
-        #213,
-        #112 50%,
-        #213
-      ),
-      conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
-    background-size: calc(100% - (var(--border-size) * 2))
-        calc(100% - (var(--border-size) * 2)),
-      cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  
-    animation: bg-spin 3s linear infinite;
-    @keyframes bg-spin {
-      to {
-        --border-angle: 1turn;
-      }
+}
+
+h2 {
+  color: #ff6922; /* Color análogo */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #ff6922; /* Color análogo */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #ffab66; /* Color de tono */
+}
+
+Link {
+  text-decoration: none;
+  color: #ff6922; /* Color análogo */
+  margin-top: 10px;
+}
+
+Link:hover {
+  text-decoration: underline;
+}
+
+.box {
+  --border-size: 3px;
+  --border-angle: 0turn;
+  width: 60vmin;
+  height: 90vmin;
+  background-image: conic-gradient(
+    from var(--border-angle),
+    #ff6922, /* Color análogo */
+    #ffa722 50%, 
+    #ff6922
+  ),
+
+  conic-gradient(from var(--border-angle), transparent 20%, #ca7411, #f03); /* Colores split-complementarios */
+  background-size: calc(100% - (var(--border-size) * 2))
+    calc(100% - (var(--border-size) * 2)),
+  cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  animation: bg-spin 3s linear infinite;
+  @keyframes bg-spin {
+    to {
+      --border-angle: 1turn;
     }
-  
-    &:hover {
-      animation-play-state: paused;
-    }
   }
-  
-  @property --border-angle {
-    syntax: "<angle>";
-    inherits: true;
-    initial-value: 0turn;
+
+  &:hover {
+    animation-play-state: paused;
   }
-  
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}

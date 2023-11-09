@@ -109,13 +109,14 @@ const Section = styled.section`
     }
   }
   .map {
-    width: 100%;
+    width: 70%;
     border: 2px solid #000;
     background-image: url("../img/mapa.jpg");
     background-size: cover;
     padding: 2.5%;
     margin-top:1%;
     margin-right:4%;
+    margin-left:4%;
   }
   @media screen and (max-width: 768px) {
     .destinations {

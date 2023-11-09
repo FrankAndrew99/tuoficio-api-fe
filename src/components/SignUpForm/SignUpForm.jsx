@@ -71,7 +71,7 @@ export const SignUpForm = () => {
     };
 
     return (
-        <div className='container1 box'>
+        <div className='container2 box'>
             {isRegistered ? (
                 <Link to="/App" />
             ) : (
