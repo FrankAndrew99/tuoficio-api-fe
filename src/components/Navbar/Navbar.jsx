@@ -25,7 +25,7 @@ export const Navbar = () => {
 
         <ul>
           <li>
-            <a href="#home">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
             <a href="#categories">Categorias</a>
@@ -36,10 +36,14 @@ export const Navbar = () => {
           <li>
             <a href="#testimonials">Acceder</a>
           </li>
+          <li>
+            <Link to="/profile-settings"><a>Mi Perfil</a></Link>
+          </li>
         </ul>
         <Link to="/login" ><button>Iniciar Sesion</button></Link>
       </Nav>
       <ResponsiveNav state={navbarState}>
+        
         <ul>
           <li>
             <a href="#home" onClick={() => setNavbarState(false)}>
