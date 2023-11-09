@@ -44,7 +44,6 @@ export const LoginForm = () => {
       } else {
         window.alert(data.message);
       }
-      setLoggedIn(true)
 
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
@@ -52,7 +51,7 @@ export const LoginForm = () => {
   };
 
   if (loggedIn) {
-     <Link to="/"/>
+     <Link to="/App"/>
   }
 
   return (
