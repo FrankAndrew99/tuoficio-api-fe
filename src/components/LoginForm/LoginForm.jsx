@@ -51,7 +51,7 @@ export const LoginForm = () => {
   };
 
   if (loggedIn) {
-     <Link to="/App"/>
+    return <Link to="/" />;
   }
 
   return (
