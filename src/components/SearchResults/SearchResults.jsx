@@ -10,13 +10,13 @@ export const SearchResults = () => {
       image: "../img/cerrajero.jpeg",
       title: "Cerrajero",
       subTitle: "Soy un cerrajero experimentado que se especializa en solucionar problemas de cerrajería. Brindo servicios confiables de apertura, reparación y reemplazo de cerraduras para garantizar la seguridad de mis clientes",
-      duration: "Calificacion",
+      duration: "Calificación",
     },
     {
       image: "../img/gasista.jpeg",
       title: "Gasista",
       subTitle: "Soy un gasista con experiencia en instalación y mantenimiento de sistemas de gas para tu tranquilidad y seguridad.",
-      duration: "Calificacion",
+      duration: "Calificación",
     },
   ];
 
@@ -109,13 +109,14 @@ const Section = styled.section`
     }
   }
   .map {
-    width: 100%;
+    width: 80%;
     border: 2px solid #000;
     background-image: url("../img/mapa.jpg");
     background-size: cover;
     padding: 2.5%;
     margin-top:1%;
     margin-right:4%;
+    margin-left:4%;
   }
   @media screen and (max-width: 768px) {
     .destinations {
