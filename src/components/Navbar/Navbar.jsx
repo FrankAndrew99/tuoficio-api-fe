@@ -11,7 +11,9 @@ export const Navbar = () => {
       <Nav>
         <div className="brand">
           <div className="container">
-            <img src={"../img/tuoficio_logo.png"} alt="" style={{ width: '500px', height: 'auto' }} />
+            <a href="/#">
+              <img src={"../img/tuoficio_logo.png"} alt="" style={{ width: '500px', height: 'auto' }}/>
+            </a>
             
           </div>
           <div className="toggle">
@@ -25,16 +27,16 @@ export const Navbar = () => {
 
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a href="/#">Home</a>
           </li>
           <li>
-            <a href="#categories">Categorias</a>
+            <a href="/#categories">Categorias</a>
           </li>
           <li>
-            <a href="#recommend">Explorar</a>
+            <a href="/#recommend">Explorar</a>
           </li>
           <li>
-            <a href="#testimonials">Acceder</a>
+            <a href="/#testimonials">Reseñas</a>
           </li>
           <li>
             <Link to="/profile-settings"><a>Mi Perfil</a></Link>

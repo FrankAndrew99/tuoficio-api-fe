@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [userType, setUserType] = useState('cliente');
   const [loggedIn, setLoggedIn] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -12,24 +13,40 @@ export const LoginForm = () => {
     const loginData = {
       email: email,
       password: password,
+      userType: userType
     };
 
     try {
-      const response = await fetch('http://localhost:3000/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(loginData),
-      });
-
-      if (response.status === 200) {
+      let response;
+      if (userType === 'cliente') {
+        response = await fetch('http://localhost:3000/login-client', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(loginData),
+        });
+      } else if (userType === 'profesional') {
+        response = await fetch('http://localhost:3000/login-professional', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(loginData),
+        });
+      }
+      const data = await response.json();
+      console.log(data)
+      if (response.ok) {
+        window.alert(data.message);
+        window.location.href = "/";
         setLoggedIn(true)
       } else {
-        console.log("Error al inicar sesion")
+        window.alert(data.message);
       }
+
     } catch (error) {
-      //
+      console.error('Error al iniciar sesión:', error);
     }
   };
 
@@ -58,6 +75,17 @@ export const LoginForm = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+        </div>
+        <div>
+          <label htmlFor="userType">Tipo de Usuario:</label>
+          <select
+            id="userType"
+            value={userType}
+            onChange={(e) => setUserType(e.target.value)}
+          >
+            <option value="cliente">Cliente</option>
+            <option value="profesional">Profesional</option>
+          </select>
         </div>
         <button type="submit">Iniciar Sesión</button>
         <Link to="/signup"><button type="submit">Registrarse</button></Link>
